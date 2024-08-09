@@ -1,0 +1,61 @@
+.loan-card {
+    max-width: 400px;
+    margin: 20px auto;
+    border: 1px solid green;
+    border-radius: 12px;
+    mat-card-subtitle{
+        display: flex;
+        text-align: center;
+        margin-top: 0;
+        mat-icon{
+            // width: 16px;
+            // height: 16px;
+            font-size: 16px;
+        }
+    }
+    mat-card-actions{
+        margin: 0;
+    }
+    .next-due{
+        text-align: center;
+        padding: 5px 0;
+    }
+    mat-card-content{
+        margin: 16px 0;
+    }
+    mat-card-actions{
+        text-align: center;
+        padding-top: 20px;
+        button{
+            width: 70%;
+            border-radius: 25px;
+        }
+    }
+  }
+  
+  .item-list {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .item-label {
+    font-weight: bold;
+  }
+  
+  .item-value {
+    color: #757575;
+  }
+  
+  .active-icon {
+    color: green; /* Color for active status */
+  }
+  
+  .deactive-icon {
+    color: red; /* Color for deactive status */
+  }

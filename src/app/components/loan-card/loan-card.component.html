@@ -1,0 +1,28 @@
+<mat-card class="loan-card">
+    <mat-card-header>
+      <mat-card-title>Happy clup member</mat-card-title>
+      <mat-card-subtitle>
+        <mat-icon class="active-icon">
+            {{'check_circle' }}
+          </mat-icon>
+          <!-- <mat-icon [ngClass]="item.status === 'active' ? 'active-icon' : 'deactive-icon'">
+            {{ item.status === 'active' ? 'check_circle' : 'cancel' }}
+          </mat-icon> -->
+        Active</mat-card-subtitle>
+    </mat-card-header>
+    <mat-divider inset></mat-divider>
+    <mat-card-content>
+      <div class="item-list">
+        <div class="item" *ngFor="let item of items">
+          <span class="item-label">{{ item.label }}</span>
+          <span class="item-value">{{ item.value }}</span>
+        </div>
+      </div>
+      <div class="next-due">*Next Installmet Due date* : 12/12/2000</div>
+    </mat-card-content>
+    <mat-divider inset></mat-divider>
+    <mat-card-actions>
+      <button mat-raised-button color="primary">View all Details</button>
+    </mat-card-actions>
+  </mat-card>
+  

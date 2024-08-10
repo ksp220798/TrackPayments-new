@@ -1,0 +1,42 @@
+<div class="bottom-sheet-container">
+    <div class="close-cta">
+        <button mat-icon-button (click)="close()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Amount</mat-label>
+        <input matInput type="number" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Date</mat-label>
+        <input matInput [matDatepicker]="picker" required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Status</mat-label>
+        <mat-select>
+            <mat-option value="option1">Paid</mat-option>
+            <mat-option value="option2">Unpaid</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Payment Mode</mat-label>
+        <mat-select>
+            <mat-option value="option1">Cash</mat-option>
+            <mat-option value="option2">Phone Pay</mat-option>
+            <mat-option value="option1">Google pay</mat-option>
+            <mat-option value="option2">Net banking / other UPIs</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <div class="submit-cta">
+        <button mat-flat-button color="primary" (click)="submit()">Submit</button>
+    </div>
+
+</div>

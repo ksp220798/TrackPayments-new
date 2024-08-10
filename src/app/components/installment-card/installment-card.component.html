@@ -1,0 +1,18 @@
+<mat-card class="loan-card">
+    <mat-card-header>
+        <mat-card-title>Installment ID 1</mat-card-title>
+    </mat-card-header>
+    <mat-divider inset></mat-divider>
+    <mat-card-content>
+        <div class="item-list">
+            <div class="item" *ngFor="let item of items">
+                <span class="item-label">{{ item.label }}</span>
+                <span class="item-value">{{ item.value }}</span>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-divider inset></mat-divider>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="openBottomSheet()">Update</button>
+    </mat-card-actions>
+</mat-card>

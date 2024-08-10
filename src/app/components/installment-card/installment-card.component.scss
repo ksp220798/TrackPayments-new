@@ -1,0 +1,43 @@
+.loan-card {
+    max-width: 400px;
+    margin: 20px;
+    border: 1px solid green;
+    border-radius: 12px;
+
+    mat-card-actions {
+        margin: 0;
+    }
+
+    mat-card-content {
+        margin: 16px 0;
+    }
+
+    mat-card-actions {
+        text-align: center;
+        padding-top: 20px;
+
+        button {
+            width: 70%;
+            border-radius: 25px;
+        }
+    }
+}
+
+.item-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.item-label {
+    font-weight: bold;
+}
+
+.item-value {
+    color: #757575;
+}

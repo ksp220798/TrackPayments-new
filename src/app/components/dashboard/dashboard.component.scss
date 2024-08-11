@@ -2,6 +2,25 @@
     height: 100%;
 }
 
+.heading-dash {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h1 {
+        margin: 0;
+    }
+
+    span {
+        display: flex;
+        align-items: center;
+
+        button {
+            border-radius: 16px;
+        }
+    }
+}
+
 .sidenav {
     width: 250px;
 }

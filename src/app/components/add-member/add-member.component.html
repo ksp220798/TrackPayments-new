@@ -1,0 +1,25 @@
+<div class="bottom-sheet-container">
+    <div class="close-cta">
+        <button mat-icon-button (click)="close()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" required>
+    </mat-form-field>
+
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>User ID</mat-label>
+            <input matInput type="text" required>
+        </mat-form-field>
+
+    </div>
+
+    <div class="submit-cta">
+        <button mat-flat-button color="primary" (click)="submit()">Add Memebr</button>
+    </div>
+
+</div>

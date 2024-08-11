@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
-
+import { AddLoanComponent } from '../add-loan/add-loan.component';
 @Component({
   selector: 'app-installment-card',
   templateUrl: './installment-card.component.html',
@@ -28,5 +28,4 @@ export class InstallmentCardComponent implements OnInit {
       data: dataToSend
     });
   }
-
 }

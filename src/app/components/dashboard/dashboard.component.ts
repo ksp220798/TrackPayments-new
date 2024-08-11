@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { AddLoanComponent } from '../add-loan/add-loan.component';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
   times = [1, 2, 3, 4];
-  constructor() { }
+  constructor(private bottomSheet: MatBottomSheet) { }
 
   ngOnInit(): void {
+  }
+
+  addLoan() {
+    const dataToSend = { someData: 'example' };
+    this.bottomSheet.open(AddLoanComponent, {
+      data: dataToSend
+    });
   }
 
 }

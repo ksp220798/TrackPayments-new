@@ -5,6 +5,16 @@ mat-toolbar.header {
   left: 0;
 }
 
+.add-buttons {
+  padding: 0 0 12px 0;
+  display: flex;
+  justify-content: space-around;
+
+  button {
+    border-radius: 16px;
+  }
+}
+
 mat-toolbar.footer {
   // position: sticky;
   // top: -1px;
@@ -155,6 +165,7 @@ mat-toolbar.footer {
 
 .member-details {
   padding: 0;
+  margin-bottom: 24px;
 
   mat-card-title {
     padding: 12px;

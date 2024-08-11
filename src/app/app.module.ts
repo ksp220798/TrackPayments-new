@@ -31,6 +31,9 @@ import { InstallmentCardComponent } from './components/installment-card/installm
 import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
+import { AddLoanComponent } from './components/add-loan/add-loan.component';
+import { AddInstallmentComponent } from './components/add-installment/add-installment.component';
+import { AddMemberComponent } from './components/add-member/add-member.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +46,9 @@ import { MatSelectModule } from '@angular/material/select';
     ViewUserDetailsComponent,
     InstallmentCardComponent,
     BottomSheetComponent,
+    AddLoanComponent,
+    AddInstallmentComponent,
+    AddMemberComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,52 @@
+<div class="bottom-sheet-container">
+    <div class="close-cta">
+        <button mat-icon-button (click)="close()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput type="number" required>
+    </mat-form-field>
+
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Amount</mat-label>
+            <input matInput type="number" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Rate of interest @PA</mat-label>
+            <input matInput type="number" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Principal</mat-label>
+            <input matInput type="number" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Tenure in months</mat-label>
+            <input matInput type="number" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Start Date</mat-label>
+            <input matInput [matDatepicker]="picker" required>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Total Members</mat-label>
+            <input matInput type="number" required>
+        </mat-form-field>
+    </div>
+
+
+    <div class="submit-cta">
+        <button mat-flat-button color="primary" (click)="submit()">Create Loan</button>
+    </div>
+
+</div>

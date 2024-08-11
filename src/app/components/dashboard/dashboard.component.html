@@ -1,27 +1,34 @@
 <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #sidenav mode="over" position="end" class="sidenav">
-      <mat-nav-list>
-        <a mat-list-item href="#">Profile</a>
-        <a mat-list-item href="#">Logout</a>
-      </mat-nav-list>
-    </mat-sidenav>
-  
-    <mat-sidenav-content>
-      <mat-toolbar color="primary">
-        <span>Home</span>
-        <span class="spacer"></span>
-        <button mat-icon-button (click)="sidenav.toggle()">
-          <mat-icon>menu</mat-icon>
-        </button>
-      </mat-toolbar>
-  
-      <div class="content">
+  <mat-sidenav #sidenav mode="over" position="end" class="sidenav">
+    <mat-nav-list>
+      <a mat-list-item href="#">Profile</a>
+      <a mat-list-item href="#">Logout</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <span>Home</span>
+      <span class="spacer"></span>
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <div class="content">
+      <div class="heading-dash">
         <h1>Hii Kundan!</h1>
-        <p>Your content goes here.</p>
-        <div *ngFor="let item of times">
-        <app-loan-card></app-loan-card>
-        </div>
+        <span>
+          <button mat-flat-button color="primary" (click)="addLoan()">Add Loan
+            <mat-icon class="active-icon">
+              {{'add' }}
+            </mat-icon></button>
+        </span>
       </div>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-  
+      <p>Your content goes here.</p>
+      <div *ngFor="let item of times">
+        <app-loan-card></app-loan-card>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

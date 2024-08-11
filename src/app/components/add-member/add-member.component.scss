@@ -1,0 +1,25 @@
+.bottom-sheet-container {
+    text-align: center;
+
+    .close-cta {
+        text-align: end;
+    }
+
+    mat-form-field {
+        width: 100%;
+    }
+
+    .submit-cta {
+        text-align: center;
+
+        button {
+            border-radius: 16px;
+        }
+    }
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}

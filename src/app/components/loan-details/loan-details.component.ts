@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { AddLoanComponent } from '../add-loan/add-loan.component';
+import { AddInstallmentComponent } from '../add-installment/add-installment.component';
+import { AddMemberComponent } from '../add-member/add-member.component';
 @Component({
   selector: 'app-loan-details',
   templateUrl: './loan-details.component.html',
@@ -13,7 +16,14 @@ export class LoanDetailsComponent implements OnInit {
     { InstallmentNo: 1, Status: 'Paid', Date: '12 jan 24', Mode: 'Online Gpay' },
     { InstallmentNo: 2, Status: 'Paid', Date: '12 jul 24 ', Mode: 'Cash' },
   ];
-  constructor() { }
+
+  panelOpenState2 = false;
+  displayedColumns2: string[] = ['UserNo', 'Name', 'Status', 'Date', 'Mode'];
+  dataSource2 = [
+    { UserNo: 1, Name: 'Rehan', Status: 'Paid', Date: '12 jan 24', Mode: 'Online Gpay' },
+    { UserNo: 2, Name: 'Kundan', Status: 'Paid', Date: '12 jan 24', Mode: 'Online Gpay' },
+  ];
+  constructor(private bottomSheet: MatBottomSheet) { }
   items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
 
   items1 = [
@@ -31,6 +41,20 @@ export class LoanDetailsComponent implements OnInit {
   ];
   expandedIndex = 0;
   ngOnInit(): void {
+  }
+
+  addInstallment() {
+    const dataToSend = { someData: 'example' };
+    this.bottomSheet.open(AddInstallmentComponent, {
+      data: dataToSend
+    });
+  }
+
+  addMember() {
+    const dataToSend = { someData: 'example' };
+    this.bottomSheet.open(AddMemberComponent, {
+      data: dataToSend
+    });
   }
 
 }

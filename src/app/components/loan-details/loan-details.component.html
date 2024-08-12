@@ -1,10 +1,10 @@
 <mat-toolbar color="primary" class="header">
-  <button mat-icon-button>
+  <button mat-icon-button (click)="back()">
     <mat-icon>
       {{'arrow_back' }}
     </mat-icon>
   </button>
-  <span>Home</span>
+  <span>Loan Details</span>
 </mat-toolbar>
 
 <mat-card class="loan-card">
@@ -54,10 +54,10 @@
       <mat-expansion-panel (opened)="panelOpenState2 = true" (closed)="panelOpenState2 = false">
         <mat-expansion-panel-header>
           <mat-panel-title>
-            Installment No-1
+            Inst. No-1
           </mat-panel-title>
           <mat-panel-description>
-            Member Paid 2/12
+            Paid 2/12
           </mat-panel-description>
         </mat-expansion-panel-header>
         <table mat-table [dataSource]="dataSource2" class="mat-elevation-z8">
@@ -83,11 +83,6 @@
             <td mat-cell *matCellDef="let element"> {{element.Date}} </td>
           </ng-container>
 
-          <!-- Symbol Column -->
-          <ng-container matColumnDef="Mode">
-            <th mat-header-cell *matHeaderCellDef class="last-col"> Mode </th>
-            <td mat-cell *matCellDef="let element"> {{element.Mode}} </td>
-          </ng-container>
 
           <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
           <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
@@ -111,9 +106,8 @@
             Paid 2/12
           </mat-panel-description>
         </mat-expansion-panel-header>
-        <div class="update-details">Update <mat-icon class="active-icon">
-            {{'add' }}
-          </mat-icon></div>
+        <div class="update-details"><button mat-flat-button color="primary" (click)="viewDetails()">Update
+        </button></div>
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
           <ng-container matColumnDef="InstallmentNo">
             <th mat-header-cell *matHeaderCellDef> No. </th>

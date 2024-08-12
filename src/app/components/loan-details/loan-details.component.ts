@@ -3,6 +3,7 @@ import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { AddLoanComponent } from '../add-loan/add-loan.component';
 import { AddInstallmentComponent } from '../add-installment/add-installment.component';
 import { AddMemberComponent } from '../add-member/add-member.component';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-loan-details',
   templateUrl: './loan-details.component.html',
@@ -18,12 +19,14 @@ export class LoanDetailsComponent implements OnInit {
   ];
 
   panelOpenState2 = false;
-  displayedColumns2: string[] = ['UserNo', 'Name', 'Status', 'Date', 'Mode'];
+  displayedColumns2: string[] = ['UserNo', 'Name', 'Status', 'Date'];
   dataSource2 = [
-    { UserNo: 1, Name: 'Rehan', Status: 'Paid', Date: '12 jan 24', Mode: 'Online Gpay' },
-    { UserNo: 2, Name: 'Kundan', Status: 'Paid', Date: '12 jan 24', Mode: 'Online Gpay' },
+    { UserNo: 1, Name: 'Rehan', Status: 'Paid', Date: '12 jan 24' },
+    { UserNo: 2, Name: 'Kundan', Status: 'Paid', Date: '12 jan 24' },
   ];
-  constructor(private bottomSheet: MatBottomSheet) { }
+  constructor(private bottomSheet: MatBottomSheet,
+    private router:Router
+  ) { }
   items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
 
   items1 = [
@@ -55,6 +58,15 @@ export class LoanDetailsComponent implements OnInit {
     this.bottomSheet.open(AddMemberComponent, {
       data: dataToSend
     });
+  }
+
+  viewDetails()
+  {
+    this.router.navigate(['/view-profile']);
+  }
+
+  back(){
+    this.router.navigate(['/dashboard']);
   }
 
 }

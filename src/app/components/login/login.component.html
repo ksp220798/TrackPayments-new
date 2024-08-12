@@ -5,17 +5,17 @@
           <form >
             <mat-form-field appearance="fill">
               <mat-label>Email</mat-label>
-              <input matInput formControlName="email" required>
+              <input matInput  required>
             </mat-form-field>
         
             <mat-form-field appearance="fill">
               <mat-label>Password</mat-label>
-              <input matInput type="password" formControlName="password" required>
+              <input matInput type="password"  required>
             </mat-form-field>
 
-            <button mat-raised-button color="primary" type="submit">Login</button>
+            <button mat-raised-button color="primary" type="submit" (click)="loginDash()">Login</button>
           </form>
-          <span>Don't have an account? Register here</span>
+          <span class="dont-have">Don't have an account? <span class="signup" (click)="signupCall()">Register here</span> </span>
         </mat-card>
         
   </div>

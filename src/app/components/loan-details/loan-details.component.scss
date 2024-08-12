@@ -96,8 +96,8 @@ mat-toolbar.footer {
   .next-due {
     text-align: center;
     padding: 18px 6px;
-    border: 1px solid red;
-    background: yellow;
+    background: #673ab7;
+    color: #fff;
     margin: 12px 4px;
     border-radius: 16px;
   }
@@ -106,15 +106,20 @@ mat-toolbar.footer {
     margin: 16px 0;
   }
 
+
   mat-card-actions {
     text-align: center;
     padding-top: 20px;
 
     button {
       width: 70%;
-      border-radius: 25px;
+      //border-radius: 25px;
     }
   }
+}
+
+button{
+  border-radius: 16px;
 }
 
 .update-details {

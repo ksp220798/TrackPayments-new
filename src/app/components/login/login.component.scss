@@ -36,9 +36,13 @@
     .mat-checkbox{
         padding: 16px 12px;
     }
-    span{
+    span.dont-have{
         text-align: center;
         font-size: 12px;
         display: block;
         padding-top: 16px;
+
+        .signup{
+            color: green;
+        }
     }

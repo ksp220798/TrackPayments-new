@@ -25,9 +25,9 @@
             </mat-icon></button>
         </span>
       </div>
-      <p>Your content goes here.</p>
+      <p>ID - LN000001</p>
       <div *ngFor="let item of times">
-        <app-loan-card></app-loan-card>
+        <app-loan-card (click)="loanDetails()"></app-loan-card>
       </div>
     </div>
   </mat-sidenav-content>

@@ -34,6 +34,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { AddLoanComponent } from './components/add-loan/add-loan.component';
 import { AddInstallmentComponent } from './components/add-installment/add-installment.component';
 import { AddMemberComponent } from './components/add-member/add-member.component';
+import { FormsModule } from '@angular/forms'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,7 +72,8 @@ import { AddMemberComponent } from './components/add-member/add-member.component
     MatBottomSheetModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSelectModule
+    MatSelectModule,
+    FormsModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

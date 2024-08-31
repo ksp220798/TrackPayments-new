@@ -36,3 +36,12 @@ form {
 .mat-checkbox{
     padding: 16px 12px;
 }
+.error-msg{
+color: red;
+text-align: center;
+mat-icon{
+    color: red;
+    height: 14px;
+    width:18px;
+}
+}

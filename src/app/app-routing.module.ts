@@ -7,6 +7,7 @@ import { LoanDetailsComponent } from './components/loan-details/loan-details.com
 import { ViewUserDetailsComponent } from './components/view-user-details/view-user-details.component';
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: 'dashboard/:id', component: DashboardComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },

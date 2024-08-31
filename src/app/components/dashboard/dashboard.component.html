@@ -17,7 +17,7 @@
 
     <div class="content">
       <div class="heading-dash">
-        <h1>Hii Kundan!</h1>
+        <h1>Hii {{name}}!</h1>
         <span>
           <button mat-flat-button color="primary" (click)="addLoan()">Add Loan
             <mat-icon class="active-icon">
@@ -25,10 +25,11 @@
             </mat-icon></button>
         </span>
       </div>
-      <p>ID - LN000001</p>
-      <div *ngFor="let item of times">
+      <p>{{id}}</p>
+      <!-- <div *ngFor="let item of times">
         <app-loan-card (click)="loanDetails()"></app-loan-card>
-      </div>
+      </div> -->
+      <div class="no-data">You have'nt took Any Loan yet</div>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

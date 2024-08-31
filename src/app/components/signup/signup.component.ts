@@ -1,5 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Route, Router } from '@angular/router';
 
 @Component({
@@ -9,26 +10,51 @@ import { Route, Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 
-  signupForm: FormGroup;
+  registerForm: FormGroup;
+  errorMessage:string="";
 
   constructor(private fb: FormBuilder,
-    private router : Router
+    private router : Router,
+    private http: HttpClient,
+
   ) {
-    this.signupForm = this.fb.group({
+    this.registerForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
-    });
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      confirmPassword: ['', Validators.required]
+    },
+    { validator: this.passwordMatchValidator }
+  );
+  }
+
+  passwordMatchValidator(control: AbstractControl): { [key: string]: boolean } | null {
+    const password = control.get('password');
+    const confirmPassword = control.get('confirmPassword');
+    if (password && confirmPassword && password.value !== confirmPassword.value) {
+      return { 'mismatch': true };
+    }
+    return null;
   }
 
   ngOnInit(): void {
   }
   onSubmit() {
-    if (this.signupForm.valid) {
-      console.log('Form Submitted!', this.signupForm.value);
-      // Here you can add your signup logic (e.g., API call)
+    if (this.registerForm.valid) {
+      console.log('Form Submitted!', this.registerForm.value);
+      this.http.post('http://localhost:3000/api/users/', this.registerForm.value).subscribe(
+        response => {
+          console.log('Registration successful', response);
+          this.router.navigate(['/login']);
+        },
+        error => {
+          this.errorMessage = error.error.message;
+          console.error('Registration failed', error);
+        }
+      );
     }
-  }
+      
+    }
   loginNav(){
     this.router.navigate(['/login']);
   }

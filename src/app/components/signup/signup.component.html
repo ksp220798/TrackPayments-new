@@ -2,7 +2,45 @@
     <div class="card-container">
         <mat-card class="signup-card">
             <h2>Signup</h2>
-            <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+              <mat-form-field appearance="fill">
+                <mat-label>Username</mat-label>
+                <input matInput formControlName="name" required>
+                <mat-error *ngIf="registerForm.get('name')?.hasError('required')">
+                  Username is required
+                </mat-error>
+              </mat-form-field>
+            
+              <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" required>
+                <mat-error *ngIf="registerForm.get('email')?.hasError('email')">
+                  Invalid email
+                </mat-error>
+              </mat-form-field>
+            
+              <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password" required>
+                <mat-error *ngIf="registerForm.get('password')?.hasError('required')">
+                  Password is required
+                </mat-error>
+              </mat-form-field>
+            
+              <mat-form-field appearance="fill">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput type="password" formControlName="confirmPassword" required>
+                <mat-error *ngIf="registerForm.hasError('mismatch')">
+                  Passwords do not match
+                </mat-error>
+              </mat-form-field>
+               <div *ngIf="errorMessage" class="error-msg"><mat-icon class="error-icon">
+                {{'error' }}
+              </mat-icon>{{errorMessage}}</div>
+              <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid">Register</button>
+            </form>
+            
+            <!-- <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
               <mat-form-field appearance="fill">
                 <mat-label>Name</mat-label>
                 <input matInput formControlName="name" required>
@@ -18,8 +56,8 @@
                 <input matInput type="password" formControlName="password" required>
               </mat-form-field>
           
-              <button mat-raised-button color="primary" type="submit" [disabled]="!signupForm.valid" (click)="loginNav()">Sign Up</button>
-            </form>
+              <button mat-raised-button color="primary" type="submit" [disabled]="!signupForm.valid">Sign Up</button>
+            </form> -->
           </mat-card>
           
     </div>

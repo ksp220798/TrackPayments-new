@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { AddLoanComponent } from '../add-loan/add-loan.component';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -9,11 +9,16 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
   times = [1, 2, 3, 4];
+  id:string='';
+  name:string="";
   constructor(private bottomSheet: MatBottomSheet,
-    private router : Router
+    private router : Router,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
+    this.id = this.route.snapshot.paramMap.get('id') || '';
+    this.name = localStorage.getItem('username') || '';
   }
 
   addLoan() {
